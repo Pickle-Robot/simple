@@ -139,7 +139,7 @@
 - name: roscpp
   type: msg
   repository: ros/ros_comm
-  version: 1.14.3
+  version: 1.15.4
   path: clients/roscpp
   release_version: 1.14.3.post0  # genpy==0.6.9.post0
 - name: std_srvs
