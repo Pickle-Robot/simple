@@ -1,8 +1,6 @@
 name: Build test
 on:
   push:
-    branches:
-      - master
   pull_request:
     branches:
       - master
@@ -49,6 +47,10 @@ jobs:
         pip install "git+https://github.com/ros/genmsg.git#egg=0.5.12"
         pip install "git+https://github.com/ros/genpy.git#egg=0.6.8"
         pip install rospy-builder/
+    - name: Download existing packages
+      run: |
+        git clone -b gh-pages https://github.com/rospypi/simple.git index
+      if: startsWith(matrix.platform, 'ubuntu-') && startsWith(matrix.python-version, '3.6')
     - name: Build packages
       run: |
         rospy-build build --local
