@@ -27,18 +27,17 @@ def normalize(name: str) -> str:
 
 def tarsum(file_name: pathlib.Path) -> str:
     tar = tarfile.open(mode="r|*", fileobj=file_name.open("rb"))
-    chunk_size = 512 * 1024
+    # read all and sort(for Python 3.6)
+    files = {}
     h = hashlib.sha256()
-    for member in tar:  # sorted(list(tar), key=lambda x: x.name):
-        print(member.name)
+    for member in tar:
         if not member.isfile():
             continue
         f = tar.extractfile(member)
-        data = f.read(chunk_size)
-        while data:
-            h.update(data)
-            print(h.hexdigest())
-            data = f.read(chunk_size)
+        files[member.name] = f.read()
+    for key in sorted(files.keys()):
+        print(key)
+        h.update(files[key])
     return h.hexdigest()
 
 
