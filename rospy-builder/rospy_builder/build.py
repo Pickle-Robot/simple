@@ -402,7 +402,7 @@ def build_package_from_local_package(
             if stat.S_ISDIR(m):
                 copytree(srcfull, dstfull)
             else:
-                shutil.copy(srcfull, dstfull)
+                shutil.copy2(srcfull, dstfull)
 
     copytree(src_dir, package_dir)
     build_package(
