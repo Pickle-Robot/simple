@@ -29,7 +29,7 @@ def tarsum(file_name: pathlib.Path) -> str:
     tar = tarfile.open(mode="r|*", fileobj=file_name.open("rb"))
     chunk_size = 512 * 1024
     h = hashlib.sha256()
-    for member in tar:
+    for member in tar:  # sorted(list(tar), key=lambda x: x.name):
         print(member.name)
         if not member.isfile():
             continue

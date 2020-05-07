@@ -50,7 +50,7 @@ jobs:
     - name: Download existing packages
       run: |
         git clone -b gh-pages https://github.com/rospypi/simple.git index
-      if: startsWith(matrix.platform, 'ubuntu-') && startsWith(matrix.python-version, '3.6')
+      if: startsWith(matrix.platform, 'ubuntu-') && startsWith(matrix.python-version, '3.8')
     - name: Build packages
       run: |
         rospy-build build tf2_ros
