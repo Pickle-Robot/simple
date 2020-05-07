@@ -30,12 +30,14 @@ def tarsum(file_name: pathlib.Path) -> str:
     chunk_size = 512 * 1024
     h = hashlib.sha256()
     for member in tar:
+        print(member.name)
         if not member.isfile():
             continue
         f = tar.extractfile(member)
         data = f.read(chunk_size)
         while data:
             h.update(data)
+            print(h.hexdigest())
             data = f.read(chunk_size)
     return h.hexdigest()
 

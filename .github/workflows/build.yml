@@ -53,4 +53,4 @@ jobs:
       if: startsWith(matrix.platform, 'ubuntu-') && startsWith(matrix.python-version, '3.6')
     - name: Build packages
       run: |
-        rospy-build build --local
+        rospy-build build tf2_ros
