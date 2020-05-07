@@ -2,6 +2,7 @@
 import hashlib
 import os
 import pathlib
+import platform
 import re
 import shutil
 import stat
@@ -386,25 +387,27 @@ def build_package_from_local_package(
     package = src_dir.name
     package_dir = build_dir / package
     shutil.rmtree(package_dir, ignore_errors=True)
-    shutil.copytree(src_dir, package_dir)
+    if platform.system() == "Windows":
+        def copytree(src, dst):
+            # windows git symlink support
+            os.makedirs(dst)
+            files = os.listdir(src)
+            for f in files:
+                srcfull = os.path.join(src, f)
+                dstfull = os.path.join(dst, f)
+                m = os.lstat(srcfull).st_mode
+                if stat.S_ISLNK(m):
+                    srcfull = os.path.join(src, os.readlink(srcfull))
+                    m = os.lstat(srcfull).st_mode
+                if stat.S_ISDIR(m):
+                    copytree(srcfull, dstfull)
+                else:
+                    shutil.copy2(srcfull, dstfull)
 
-    # def copytree(src, dst):
-    #     # windows git symlink support
-    #     os.makedirs(dst)
-    #     files = os.listdir(src)
-    #     for f in files:
-    #         srcfull = os.path.join(src, f)
-    #         dstfull = os.path.join(dst, f)
-    #         m = os.lstat(srcfull).st_mode
-    #         if stat.S_ISLNK(m):
-    #             srcfull = os.path.join(src, os.readlink(srcfull))
-    #             m = os.lstat(srcfull).st_mode
-    #         if stat.S_ISDIR(m):
-    #             copytree(srcfull, dstfull)
-    #         else:
-    #             shutil.copy2(srcfull, dstfull)
+        copytree(src_dir, package_dir)
+    else:
+        shutil.copytree(src_dir, package_dir)
 
-    # copytree(src_dir, package_dir)
     build_package(
         package_dir=package_dir,
         dest_dir=dest_dir,
