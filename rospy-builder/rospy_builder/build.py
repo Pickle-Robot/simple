@@ -160,9 +160,10 @@ def build_package(
             if compare:
                 digest0 = tarsum(tar_file)
                 digest1 = tarsum(dest_package_dir / tar_file.name)
+                print(f"new: {digest0}, old: {digest1}")
                 if digest0 != digest1:
                     print(
-                        "Hash is same! Remove or change the version."
+                        "Hash is not same! Remove or change the version."
                         f"{tar_file.name}"
                     )
                     shutil.copy(tar_file, cwd + "/" + tar_file.name + ".new")
