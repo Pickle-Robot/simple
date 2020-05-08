@@ -58,3 +58,18 @@ jobs:
       run: |
         rospy-build build
       if: startsWith(matrix.platform, 'ubuntu-') && startsWith(matrix.python-version, '3.8')
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install rospy-build
+      run: |
+        python -m pip install --upgrade pip
+        pip install setuptools wheel
+        pip install "git+https://github.com/ros-infrastructure/catkin_pkg.git#egg=0.4.13"
+        pip install "git+https://github.com/ros/genmsg.git#egg=0.5.12"
+        pip install "git+https://github.com/ros/genpy.git#egg=0.6.10"
+        pip install rospy-builder/
+    - name: Create index.html
+      run: echo hoge
