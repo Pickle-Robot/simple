@@ -114,8 +114,7 @@
   version: 1.12.0
 - name: genpy
   repository: ros/genpy
-  version: 4a094eaaa79c379593badcdea58060e26f9fe933
-  release_version: 0.6.9.post0
+  version: 0.6.10
 - name: genmsg
   repository: ros/genmsg
   version: 0.5.12
@@ -135,112 +134,112 @@
   type: msg
   repository: ros/std_msgs
   version: 0.5.12
-  release_version: 0.5.12.post0  # genpy==0.6.9.post0
+  release_version: 0.5.12.post1  # genpy==0.6.10
 - name: roscpp
   type: msg
   repository: ros/ros_comm
   version: 1.15.4
   path: clients/roscpp
-  release_version: 1.14.3.post0  # genpy==0.6.9.post0
+  release_version: 1.14.3.post1  # genpy==0.6.10
 - name: std_srvs
   type: msg
   repository: ros/ros_comm_msgs
   version: 1.11.2
   path: std_srvs
-  release_version: 1.11.2.post0  # genpy==0.6.9.post0
+  release_version: 1.11.2.post1  # genpy==0.6.10
 - name: rosgraph_msgs
   type: msg
   repository: ros/ros_comm_msgs
   version: 1.11.2
   path: rosgraph_msgs
-  release_version: 1.11.2.post0  # genpy==0.6.9.post0
+  release_version: 1.11.2.post1  # genpy==0.6.10
 - name: geometry_msgs
   type: msg
   repository: ros/common_msgs
   version: 1.12.7
   path: geometry_msgs
-  release_version: 1.12.7.post0  # genpy==0.6.9.post0
+  release_version: 1.12.7.post1  # genpy==0.6.10
 - name: sensor_msgs
   type: msg
   repository: ros/common_msgs
   version: 1.12.7
   path: sensor_msgs
-  release_version: 1.12.7.post0  # genpy==0.6.9.post0
+  release_version: 1.12.7.post1  # genpy==0.6.10
 - name: actionlib_msgs
   type: msg
   repository: ros/common_msgs
   version: 1.12.7
   path: actionlib_msgs
-  release_version: 1.12.7.post0  # genpy==0.6.9.post0
+  release_version: 1.12.7.post1  # genpy==0.6.10
 - name: shape_msgs
   type: msg
   repository: ros/common_msgs
   version: 1.12.7
   path: shape_msgs
-  release_version: 1.12.7.post0  # genpy==0.6.9.post0
+  release_version: 1.12.7.post1  # genpy==0.6.10
 - name: diagnostic_msgs
   type: msg
   repository: ros/common_msgs
   version: 1.12.7
   path: diagnostic_msgs
-  release_version: 1.12.7.post0  # genpy==0.6.9.post0
+  release_version: 1.12.7.post1  # genpy==0.6.10
 - name: nav_msgs
   type: msg
   repository: ros/common_msgs
   version: 1.12.7
   path: nav_msgs
-  release_version: 1.12.7.post0  # genpy==0.6.9.post0
+  release_version: 1.12.7.post1  # genpy==0.6.10
 - name: stereo_msgs
   type: msg
   repository: ros/common_msgs
   version: 1.12.7
   path: stereo_msgs
-  release_version: 1.12.7.post0  # genpy==0.6.9.post0
+  release_version: 1.12.7.post1  # genpy==0.6.10
 - name: trajectory_msgs
   type: msg
   repository: ros/common_msgs
   version: 1.12.7
   path: trajectory_msgs
-  release_version: 1.12.7.post0  # genpy==0.6.9.post0
+  release_version: 1.12.7.post1  # genpy==0.6.10
 - name: visualization_msgs
   type: msg
   repository: ros/common_msgs
   version: 1.12.7
   path: visualization_msgs
-  release_version: 1.12.7.post0  # genpy==0.6.9.post0
+  release_version: 1.12.7.post1  # genpy==0.6.10
 - name: tf
   repository: ros/geometry
   version: 1.12.0
   path: tf
   src: src
-  release_version: 1.12.0.post0  # genpy==0.6.9.post0
+  release_version: 1.12.0.post1  # genpy==0.6.10
 - name: tf2_msgs
   type: msg
   repository: ros/geometry2
   version: 0.6.5
   path: tf2_msgs
-  release_version: 0.6.5.post0  # genpy==0.6.9.post0
+  release_version: 0.6.5.post1  # genpy==0.6.10
 - name: control_msgs
   type: msg
   repository: ros-controls/control_msgs
   version: 1.5.0
   path: control_msgs
-  release_version: 1.5.0.post0  # genpy==0.6.9.post0
+  release_version: 1.5.0.post1  # genpy==0.6.10
 - name: map_msgs
   type: msg
   repository: ros-planning/navigation_msgs
   version: 1.13.0
   path: map_msgs
-  release_version: 1.13.0.post0  # genpy==0.6.9.post0
+  release_version: 1.13.0.post1  # genpy==0.6.10
 - name: move_base_msgs
   type: msg
   repository: ros-planning/navigation_msgs
   version: 1.13.0
   path: move_base_msgs
-  release_version: 1.13.0.post0  # genpy==0.6.9.post0
+  release_version: 1.13.0.post1  # genpy==0.6.10
 - name: gazebo_msgs
   type: msg
   repository: ros-simulation/gazebo_ros_pkgs
   version: 2.5.19
   path: gazebo_msgs
-  release_version: 2.5.19.post0  # genpy==0.6.9.post0
+  release_version: 2.5.19.post1  # genpy==0.6.10
