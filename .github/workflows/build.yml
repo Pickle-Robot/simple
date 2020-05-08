@@ -51,6 +51,10 @@ jobs:
       run: |
         git clone -b gh-pages https://github.com/rospypi/simple.git index
       if: startsWith(matrix.platform, 'ubuntu-') && startsWith(matrix.python-version, '3.8')
-    - name: Build packages
+    - name: Build platform specific binary packages
       run: |
-        rospy-build build tf2_ros
+        rospy-build build --local
+    - name: Build universal packages
+      run: |
+        rospy-build build
+      if: startsWith(matrix.platform, 'ubuntu-') && startsWith(matrix.python-version, '3.8')
